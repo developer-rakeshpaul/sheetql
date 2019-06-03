@@ -1,0 +1,55 @@
+{
+  "name": "sheetql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn src/server.ts",
+    "start": "node ./dist/server.js",
+    "watch": "tsc -w",
+    "debug": "nodemon --legacy-watch --watch ./dist --inspect=0.0.0.0:5858 --nolazy ./dist/server.js",
+    "build": "rimraf dist && tsc -build tsconfig.json",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "lintfix": "tslint --fix -p tsconfig.json -c tslint.json",
+    "now": "now dev -p 5005"
+  },
+  "keywords": [],
+  "author": "Rakesh Paul <developer.rakeshpaul@gmail.com> (https://www.linkedin.com/in/rakesh-paul-29221516/)",
+  "license": "ISC",
+  "dependencies": {
+    "@zeit/integration-utils": "^0.6.1",
+    "apollo-server": "^2.6.1",
+    "class-validator": "^0.9.1",
+    "cookie": "^0.4.0",
+    "googleapis": "^39.2.0",
+    "graphql": "^14.3.1",
+    "lodash.get": "^4.4.2",
+    "micro": "^9.3.4",
+    "ms": "^2.1.1",
+    "node-fetch": "^2.6.0",
+    "querystring": "^0.2.0",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^0.17.4",
+    "uid-promise": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/cookie": "^0.3.3",
+    "@types/graphql": "^14.2.0",
+    "@types/lodash.get": "^4.4.6",
+    "@types/micro": "^7.3.3",
+    "@types/ms": "^0.7.30",
+    "@types/node-fetch": "^2.3.4",
+    "husky": "^2.3.0",
+    "prettier": "^1.17.1",
+    "pretty-quick": "^1.11.0",
+    "ts-node-dev": "^1.0.0-pre.39",
+    "tslint": "^5.17.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.5.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
